@@ -1,0 +1,43 @@
+<div class="pagina-senha">
+
+    <div class="card-senha">
+
+        <h2>Esqueci minha senha</h2>
+
+        <p>
+            Informe o seu e-mail
+        </p>
+
+        <div class="campo-email">
+            <input
+                type="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                [(ngModel)]="obj.email"
+                (keyup.enter)="resetarSenha()">
+
+            <button type="button" (click)="resetarSenha()">
+                OK
+            </button>
+        </div>
+
+        <p class="mensagem-senha" *ngIf="mensagem.length > 0">
+            {{mensagem}}
+        </p>
+
+        <!-- Depois do reset o cliente precisa criar uma nova senha -->
+        <div *ngIf="resetou" class="aviso-reset">
+            <p>
+                Sua senha temporária é <strong class="senha-temp">{{senhaTemporaria}}</strong>
+                Crie uma nova senha para voltar a entrar.
+            </p>
+            <button type="button" class="btn-nova-senha" (click)="criarNovaSenha()">
+                Criar nova senha
+            </button>
+        </div>
+
+        <a routerLink="/login" class="d-block mt-3">Voltar para o login</a>
+
+    </div>
+
+</div>

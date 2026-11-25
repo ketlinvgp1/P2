@@ -1,0 +1,55 @@
+.pagina-senha {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #023b86;
+    padding: 40px 20px;
+}
+
+.card-senha {
+    background-color: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-senha h2 {
+    color: #023b86;
+    margin-bottom: 15px;
+}
+
+.card-senha label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dica {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-alterar {
+    width: 100%;
+    background-color: #12532f;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-alterar:hover {
+    background-color: #2a7e7a;
+}
+
+.voltar {
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+}

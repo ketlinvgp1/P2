@@ -1,0 +1,119 @@
+<div class="container">
+
+    <h2>Minha cesta</h2>
+
+    <div *ngIf="produtos.length === 0">
+        Sua cesta está vazia.
+    </div>
+
+    <div
+        *ngFor="let produto of produtos"
+        class="card mb-3">
+
+        <div class="card-body">
+
+            <h4>{{ produto.nome }}</h4>
+
+            <p>{{ produto.descritivo }}</p>
+
+            <!-- Local de partida (pode ser trocado aqui na cesta) -->
+            <div class="partida-cesta mb-3">
+                <label>Saída de:</label>
+                <select
+                    class="form-select"
+                    [value]="codigoPartida(produto)"
+                    (change)="alterarPartida(produto, $event)">
+                    <option
+                        *ngFor="let p of partidas"
+                        [value]="p.codigo"
+                        [selected]="p.nome == produto.partida">
+                        {{p.nome}}
+                    </option>
+                </select>
+            </div>
+
+            <p>
+                Quantidade: {{ produto.qtdCesta }}
+            </p>
+
+            <p>
+                Valor unitário:
+                R$ {{ produto.precoUnitario | number:'1.2-2' }}
+            </p>
+
+            <strong>
+                Total:
+                R$ {{ produto.valorTotal | number:'1.2-2' }}
+            </strong>
+            <button
+                    class="btn btn-danger ms-3"
+                    (click)="remover(produto)">
+                    Remover
+            </button>
+
+        </div>
+
+    </div>
+
+    <h3 *ngIf="produtos.length > 0">
+        Total da cesta:
+        R$ {{ total() | number:'1.2-2' }}
+    </h3>
+
+    <button
+        type="button"
+        class="btn btn-success btn-lg mt-3"
+        *ngIf="produtos.length > 0"
+        (click)="gravarPedido()">
+        Finalizar compra
+    </button>
+
+    <div
+        class="alert mt-3"
+        [class.alert-success]="sucesso"
+        [class.alert-danger]="!sucesso"
+        *ngIf="mensagem.length > 0">
+        {{mensagem}}
+    </div>
+
+    <!-- ===== HISTÓRICO DE COMPRAS ===== -->
+    <div class="historico">
+
+        <h2>Minhas compras</h2>
+
+        <p *ngIf="!logado">
+            <a routerLink="/login">Faça login</a> para ver as suas compras.
+        </p>
+
+        <p *ngIf="logado && mensagemHistorico.length > 0">
+            {{mensagemHistorico}}
+        </p>
+
+        <div class="card mb-3 pedido" *ngFor="let pedido of historico">
+
+            <div class="card-header pedido-topo">
+                <span>
+                    <strong>Pedido nº {{pedido.codigoPedido}}</strong>
+                    — {{formatarData(pedido.dataPedido)}}
+                </span>
+                <strong>
+                    Total: R$ {{pedido.valorTotal | number:'1.2-2'}}
+                </strong>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item pedido-item" *ngFor="let item of pedido.itens">
+                    <span>
+                        <strong>{{item.nomeProduto}}</strong>
+                        <small class="text-muted"> — saída: {{item.partida}}</small>
+                    </span>
+                    <span>
+                        {{item.quantidade}}x R$ {{item.valor | number:'1.2-2'}}
+                    </span>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>

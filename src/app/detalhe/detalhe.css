@@ -1,0 +1,118 @@
+.detalhe {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.card-detalhe {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.imagem-produto {
+    padding: 0;
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+
+.informacoes {
+    padding: 40px;
+    
+}
+
+.informacoes h2 {
+    color: #023b86;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.descricao {
+    font-size: 18px;
+    color: #050505;
+    margin-bottom: 30px;
+    font-size:20px; 
+}
+
+.preco-antigo {
+    color: #777;
+    margin-bottom: 5px;
+     font-size: 30px;
+}
+
+/*LOCAL DE PARTIDA*/
+
+.partida {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.partida label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.partida .form-select {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: white;
+}
+ 
+.partida .form-select:focus {
+    border-color: #52718a;
+    box-shadow: 0 0 0 2px rgba(82, 113, 138, 0.15);
+}
+
+
+/*PREÇO*/
+.preco {
+    font-size: 30px;
+    font-weight: bold;
+    color: #111;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* BOTÃO COMPRAR*/
+.btn-comprar {
+    width: 100%;
+    height: 55px;
+    background-color: #ffdf00;
+    border: none;
+    border-radius: 12px;
+    color: #000;
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-comprar:hover {
+    background-color: #f2d000;
+    color: #000;
+}
+
+/* Efeito ao clicar */
+.btn-comprar:active {
+    transform: scale(0.98);
+}
+
+.sem-estoque {
+    color: #b00020;
+    font-weight: bold;
+}
+

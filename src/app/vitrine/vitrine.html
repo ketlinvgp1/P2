@@ -1,0 +1,154 @@
+<!-- Topo da vitrine: pesquisa e mensagens -->
+<div class="topo-vitrine">
+
+<!-- Barra de pesquisa -->
+<div class="busca">
+
+    <input
+        type="text"
+        name="termoBusca"
+        class="form-control"
+        placeholder="Buscar destinos..."
+        autocomplete="off"
+        [(ngModel)]="termoBusca">
+
+    <!-- Botão para limpar a pesquisa -->
+    <button
+        type="button"
+        class="btn-limpar"
+        *ngIf="termoBusca.length > 0"
+        (click)="limparBusca()"
+        aria-label="Limpar pesquisa">
+        &times;
+    </button>
+
+</div>
+
+<div class="alert alert-info" *ngIf="lista.length > 0 && listaFiltrada().length == 0">
+    Nenhum destino encontrado para "{{termoBusca}}".
+</div>
+
+<div class="alert alert-info" *ngIf="mensagem.length > 0">
+    {{mensagem}}
+</div>
+
+</div>
+
+<div class="alert alert-warning" *ngIf="lista.length <= 0 && mensagem.length == 0">
+    <strong>Vazio!</strong>
+    Não existem produtos na vitrine!
+</div>
+
+<div class="row vitrine">
+
+    <ng-container *ngFor="let obj of lista">
+
+        <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3 cinco-colunas"
+            *ngIf="filtrar(obj)">
+
+            <div class="card anuncio">
+
+                <!-- CARROSSEL -->
+                <div
+                    id="carousel{{obj.codigo}}"
+                    class="carousel slide">
+
+                    <div class="carousel-inner">
+
+                        <!-- Primeira imagem -->
+                        <div class="carousel-item active">
+                            <img
+                                src="{{obj.codigo}}.jpg"
+                                class="d-block imagem-anuncio"
+                                alt="{{obj.nome}}">
+                        </div>
+
+                        <!-- Segunda imagem -->
+                        <div class="carousel-item">
+                            <img
+                                src="{{obj.codigo}}-2.jpg"
+                                class="d-block imagem-anuncio"
+                                alt="{{obj.nome}}">
+                        </div>
+
+                        <!-- Terceira imagem -->
+                        <div class="carousel-item">
+                            <img
+                                src="{{obj.codigo}}-3.jpg"
+                                class="d-block imagem-anuncio"
+                                alt="{{obj.nome}}">
+                        </div>
+
+                        <!-- Quarta imagem -->
+                        <div class="carousel-item">
+                            <img
+                                src="{{obj.codigo}}-4.jpg"
+                                class="d-block imagem-anuncio"
+                                alt="{{obj.nome}}">
+                        </div>
+
+                    </div>
+
+                    <!-- Botão anterior -->
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        [attr.data-bs-target]="'#carousel' + obj.codigo"
+                        data-bs-slide="prev">
+
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+
+                    <!-- Botão próximo -->
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        [attr.data-bs-target]="'#carousel' + obj.codigo"
+                        data-bs-slide="next">
+
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+
+                </div>
+
+                <!-- INFORMAÇÕES DO PRODUTO -->
+                <div class="card-body">
+
+                    <h4 class="card-title">
+                        {{obj.nome}}
+                    </h4>
+
+                    <p class="card-text descricao">
+                        a partir de:
+                    </p>
+
+                    <p class="card-preco">
+                        R$ {{obj.valor}}
+                    </p>
+
+                    <p class="descricao">
+                        {{obj.descritivo}}
+                    </p>
+
+                    <div class="botoes-card">
+
+                        <a
+                            class="btn botao-detalhe"
+                            (click)="verDetalhe(obj)">
+
+                            Detalhes
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </ng-container>
+
+</div>

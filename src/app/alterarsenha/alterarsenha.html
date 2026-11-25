@@ -1,0 +1,65 @@
+<div class="pagina-senha">
+
+    <div class="card-senha">
+
+        <h2>Alterar senha</h2>
+
+        <p class="dica">
+            Se você pediu "Esqueci minha senha", a sua senha atual é a
+            senha temporária que apareceu na tela.
+        </p>
+
+        <label for="txtEmail">E-mail</label>
+        <input
+            type="email"
+            id="txtEmail"
+            name="email"
+            class="form-control mb-3"
+            placeholder="Digite seu e-mail"
+            [(ngModel)]="email">
+
+        <label for="txtSenhaAtual">Senha atual (ou temporária)</label>
+        <input
+            type="password"
+            id="txtSenhaAtual"
+            name="senhaAtual"
+            class="form-control mb-3"
+            placeholder="Digite sua senha atual"
+            [(ngModel)]="senhaAtual">
+
+        <label for="txtNovaSenha">Nova senha</label>
+        <input
+            type="password"
+            id="txtNovaSenha"
+            name="novaSenha"
+            class="form-control mb-3"
+            placeholder="Digite a nova senha"
+            [(ngModel)]="novaSenha">
+
+        <label for="txtConfirmar">Confirmar nova senha</label>
+        <input
+            type="password"
+            id="txtConfirmar"
+            name="confirmarSenha"
+            class="form-control mb-3"
+            placeholder="Repita a nova senha"
+            [(ngModel)]="confirmarSenha"
+            (keyup.enter)="alterarSenha()">
+
+        <button type="button" class="btn-alterar" (click)="alterarSenha()">
+            Alterar senha
+        </button>
+
+        <div
+            class="alert mt-3"
+            [class.alert-success]="sucesso"
+            [class.alert-danger]="!sucesso"
+            *ngIf="mensagem.length > 0">
+            {{mensagem}}
+        </div>
+
+        <a routerLink="/login" class="voltar">Voltar para o login</a>
+
+    </div>
+
+</div>

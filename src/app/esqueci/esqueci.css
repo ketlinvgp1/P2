@@ -1,0 +1,109 @@
+.pagina-senha {
+    min-height: 70vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #023b86;
+
+    padding: 40px 20px;
+}
+
+.card-senha {
+    background-color: white;
+
+    width: 100%;
+    max-width: 450px;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-senha h2 {
+    color: #023b86;
+    margin-bottom: 25px;
+}
+
+.card-senha p {
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.campo-email {
+    display: flex;
+}
+
+.campo-email input {
+    flex: 1;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
+
+    outline: none;
+}
+
+.campo-email input:focus {
+    border-color: #369cdd;
+}
+
+.campo-email button {
+    background-color: #12532f;
+    color: white;
+
+    border: none;
+
+    padding: 0 20px;
+
+    border-radius: 0 6px 6px 0;
+
+    cursor: pointer;
+}
+
+.campo-email button:hover {
+    background-color: #2a7e7a;
+}
+.mensagem-senha {
+    margin-top: 15px;
+    font-weight: normal !important;
+    font-size: 16px !important;
+    color: #023b86;
+}
+
+.aviso-reset {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #eef6ff;
+    border-radius: 8px;
+}
+
+.aviso-reset p {
+    font-weight: normal !important;
+    font-size: 15px !important;
+}
+
+.btn-nova-senha {
+    width: 100%;
+    background-color: #12532f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.senha-temp {
+    font-family: monospace;
+    font-size: 18px;
+    letter-spacing: 1px;
+}

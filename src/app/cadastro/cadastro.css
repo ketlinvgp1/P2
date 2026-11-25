@@ -1,0 +1,100 @@
+.cadastro-container {
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #023b86,
+        #2a7e7a
+    );
+}
+
+.cadastro-card {
+    width: 100%;
+    max-width: 500px;
+    background-color: white;
+    border-top: 6px solid #369cdd !important;
+}
+
+/* TÍTULO */
+
+.cadastro-card h3 {
+    color: #023b86;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* SUBTÍTULO */
+.subtitulo {
+    color: #2a7e7a;
+}
+
+/* LABELS */
+.form-label {
+    color: #023b86;
+    font-weight: 600;
+}
+
+/* CAMPOS */
+.form-control {
+    min-height: 48px;
+    border: 1px solid #369cdd;
+    border-radius: 8px;
+}
+
+
+/* TEXTAREA */
+textarea.form-control {
+    min-height: 90px;
+}
+
+/* BOTÃO */
+.btn-cadastrar {
+    min-height: 50px;
+    background-color: #023b86;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+/* LINK LOGIN */
+
+.texto-conta {
+    color: #2a7e7a;
+}
+
+.link-login {
+    color: #12532f;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+
+
+/* Botões Atualizar / Excluir conta lado a lado */
+.botoes-cadastro {
+    display: flex;
+    gap: 10px;
+}
+
+.botoes-cadastro .btn {
+    flex: 1;
+}
+
+.btn-excluir {
+    background-color: #c0392b;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-excluir:hover {
+    background-color: #962d22;
+    color: white;
+}
+

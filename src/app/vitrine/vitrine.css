@@ -1,0 +1,119 @@
+.descricao {
+    font-size: 20px;
+    color:#000000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-text{
+   font-size: 15px;
+}
+
+.card-preco{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* VITRINE */
+
+.vitrine {
+    row-gap: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* CARD */
+.anuncio {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.anuncio .card-body{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+@media (min-width: 1200px) {
+  .cinco-colunas {
+    width: 20%;
+  }
+}/*maximo 5 colunas em telas grandes*/
+
+/* IMAGENS */
+.imagem-anuncio {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.botoes-card{
+    margin-top: auto;
+}
+
+.botao-detalhe {
+    display: block;
+    background-color: #52718a;
+    border-color: #52718a;
+    color: aliceblue;
+    width: 100%;
+
+}
+
+.anuncio .botao-detalhe:hover {
+    background-color: white;
+    color: #52718a;
+    border-color: #52718a;
+}
+
+
+/* Faz os botões ficarem na parte inferior do card */
+.anuncio .botao-detalhe {
+    margin-top: auto;
+}
+
+
+/* BARRA DE PESQUISA */
+.busca {
+    position: relative;
+}
+
+.busca .form-control {
+    padding-right: 40px;
+}
+
+.btn-limpar {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    color: #333;
+}
+
+.botao-detalhe {
+    cursor: pointer;
+}
+
+/* Espaço em volta da pesquisa e das mensagens */
+.topo-vitrine {
+    max-width: 1200px;
+    margin: 25px auto 0 auto;
+    padding: 0 20px;
+}
+
+.topo-vitrine .alert {
+    margin-top: 15px;
+}

@@ -1,0 +1,25 @@
+
+/* Local de partida na cesta */
+.partida-cesta {
+    max-width: 320px;
+}
+
+.partida-cesta label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Histórico de compras */
+.historico {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.pedido-topo,
+.pedido-item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
